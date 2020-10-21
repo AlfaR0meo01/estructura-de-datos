@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <form method='post'>
+            <div class='formGroup'>
+                <label for='codigoProducto'>Codigo de producto</label>
+                <input type='text' id='codigoProducto' placeholder='Codigo de producto'>
+            </div>
+            <div class='formGroup'>
+                <label for='nombreProducto'>Nombre de producto</label>
+                <input type='text' id='nombreProducto' placeholder='Nombre de producto'>
+            </div>
+            <div class='formGroup'>
+                <label for='cantidadProducto'>Cantdad</label>
+                <input type='text' id='cantidadProducto' placeholder='Cantidad'>
+            </div>
+            <div class='formGroup'>
+                <label for='precioProducto'>Precio de producto</label>
+                <input type='text' id='precioProducto' placeholder='Precio'>
+            </div>
+            <div class='formGroupBtn'>
+                <button type='submit'>Agregar Producto</button>
+            </div>
+        </form>
+    </div>
+    <div>
+        <input type='text' class='inputBuscar' placeholder='Buscar por codigo'>
+    </div>
+    <div>
+        <button id='invertir'>Invertir</button>
+    </div>
+    <section>
+        <table>
+            <thead>
+                <tr>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Valor total</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <script src='index.js'></script>
+</body>
+</html>
