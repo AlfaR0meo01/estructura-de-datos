@@ -1,6 +1,6 @@
 let arrayData = [];
 
-document.querySelector('form').addEventListener('submit',function(e){
+document.querySelector('#agregar').addEventListener('submit',function(e){
     e.preventDefault();
     let cantidad =  document.getElementById('cantidadProducto').value;
     let precio = document.getElementById('precioProducto').value;
@@ -11,8 +11,26 @@ document.querySelector('form').addEventListener('submit',function(e){
         precio: precio,
         total: precio * cantidad
     }
-    arrayData.length <= 19 ?  arrayData[arrayData.length] = data : console.log('ya no se puede introducir mas datos');
-    console.log(arrayData);
+    arrayData.length <= 19 ?  arrayData[arrayData.length] = data : alert('ya no se puede introducir mas datos');
+    generateTable(arrayData);
+});
+
+document.querySelector('#insertar').addEventListener('submit',function(e){
+    e.preventDefault();
+    let posicion =  document.getElementById('posicionInsertar').value;
+    let cantidad =  document.getElementById('cantidadInsertar').value;
+    let precio = document.getElementById('precioInsertar').value;
+    let data = {
+        codigo: document.getElementById('codigoInsertar').value,
+        nombre: document.getElementById('nombreInsertar').value,
+        cantidad: cantidad,
+        precio: precio,
+        total: precio * cantidad
+    }
+    for (let j = arrayData.length; j > posicion; j--) {
+        arrayData[j] = arrayData[j-1] 
+    }
+    arrayData.length <= 19 ?   arrayData[posicion] = data : alert('ya no se puede introducir mas datos');
     generateTable(arrayData);
 });
 
@@ -65,8 +83,9 @@ function eliminar(data) {
             for (var j = i; j < arrayData.length - 1; j++) {
                 arrayData[j] = arrayData[j + 1];
             }
-            arrayData.length = arrayData.length - 1
+            arrayData.length = arrayData.length - 1;
         }
     }
+    console.log(arrayData);
     generateTable(arrayData);
 }
